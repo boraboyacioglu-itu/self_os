@@ -1,0 +1,5 @@
+
+selfos/media
+selfos/.selfos_history
+selfos/*.txt
+*.pyc
