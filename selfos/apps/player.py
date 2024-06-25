@@ -2,7 +2,7 @@ import os
 import curses
 import pygame
 
-def run(stdscr, dir, *args):
+def player(stdscr, dir, *args):
     music_file = os.path.join(args[0])
     
     curses.curs_set(0)
@@ -40,3 +40,7 @@ def run(stdscr, dir, *args):
 
     pygame.mixer.quit()
     return f"Playing '{args[0]}'"
+
+def run(dir, *args):
+    """ Plays the given music file. """
+    return curses.wrapper(player, dir, *args)

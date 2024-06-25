@@ -62,3 +62,7 @@ def editor(stdscr, content):
             x += 1
     
     return content
+
+def run(content):
+    """ Runs the editor. """
+    return curses.wrapper(editor, content)

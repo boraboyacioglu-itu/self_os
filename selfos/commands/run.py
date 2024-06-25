@@ -3,7 +3,7 @@ import os
 
 import curses
 
-__doc__ = "Runs an application. Usage: run <appname>"
+__doc__ = "Runs an application. Usage: run <appname> [args]"
 
 def run(dir, *args):
     """ Runs an application. """
@@ -14,7 +14,10 @@ def run(dir, *args):
     module = util.module_from_spec(spec)
     spec.loader.exec_module(module)
 
-    # Run the app.
-    string = curses.wrapper(module.run, dir, *args[1:])
+    try:
+        # Run the app.
+        string = module.run(dir, *args[1:])
+    except KeyboardInterrupt:
+        string = ''
     
     return string, False

@@ -2,4 +2,9 @@ from main import SelfTerminal
 
 if __name__ == '__main__':
     terminal = SelfTerminal()
-    terminal.run()
+    
+    try:
+        terminal.run()
+    except KeyboardInterrupt:
+        print("\nExiting...")
+        exit(0)

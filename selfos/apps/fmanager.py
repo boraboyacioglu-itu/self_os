@@ -35,7 +35,7 @@ def view_file(stdscr, file_path):
         elif key == curses.KEY_DOWN and line_num < len(lines) - max_y:
             line_num += 1
 
-def run(stdscr, dir):
+def file_manager(stdscr, dir):
     curses.curs_set(0)
     i = 0
 
@@ -66,3 +66,7 @@ def run(stdscr, dir):
             break
     
     return ''
+
+def run(dir, *args):
+    """ Opens a file manager to navigate directories. """
+    return curses.wrapper(file_manager, dir)

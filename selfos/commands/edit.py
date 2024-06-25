@@ -1,7 +1,7 @@
 import os
 import curses
 
-from apps.editor import editor
+from apps.editor import run as editor
 
 __doc__ = "Edits the given file. Usage: edit <filename>"
 
@@ -25,7 +25,7 @@ def run(dir, *args):
         content = file.readlines()
     
     # Edit the content.
-    output = curses.wrapper(editor, content)
+    output = editor(content)
     
     # Save the content.
     with open(filepath, 'w') as file:

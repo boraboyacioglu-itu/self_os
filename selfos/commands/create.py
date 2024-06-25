@@ -1,7 +1,7 @@
 import os
 import curses
 
-from apps.editor import editor
+from apps.editor import run as editor
 
 __doc__ = "Creates a new file with the given content. Usage: create <filename>"
 
@@ -20,7 +20,7 @@ def run(dir, *args):
     if os.path.exists(filepath):
         return f"Error: File '{filename}' already exists.", True
     
-    content = curses.wrapper(editor, [' '])
+    content = editor([' '])
     
     # Write the content to the file.
     with open(filepath, 'w') as file:
