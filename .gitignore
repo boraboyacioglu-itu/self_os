@@ -1,5 +1,5 @@
 
-selfos/media
-selfos/.selfos_history
-selfos/*.txt
+python/media
+python/.selfos_history
+python/*.txt
 *.pyc
