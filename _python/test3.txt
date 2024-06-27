@@ -1,0 +1,2 @@
+deneme
+bu dosya wrapper ile oluşturuldu. 
